@@ -22,32 +22,6 @@ The Parallel System is designed to manage synonym pairs, blacklist words, and ge
 7. **Handling Inactive Synonyms**: Inactive synonym pairs (due to blacklisting) should be excluded when generating similar sentences.
 8. **Blacklist Functionality**: Blacklisting a word renders all corresponding synonym pairs involving the blacklisted word inactive.
 
-
-## Design Strategy
-
-### Data Structure
-
-- **WordSynonymGraph**:
-    - **Type**: Singleton class.
-    - **Responsibilities**: Manages synonym pairs and blacklisted words. Stores synonyms in a `Map<String, Set<String>>` for efficient lookup and modification.
-    - **Concurrency**: Uses synchronized blocks for thread safety.
-
-### Strategy and Algorithm
-
-1. **Synonym Management**:
-    - **Add Synonym Pair**: Adds mutual synonyms to the graph.
-    - **Remove Synonym Pair**: Removes synonyms from the graph.
-    - **Blacklist Word**: Deactivates pairs involving the blacklisted word.
-
-2. **Sentence Generation**:
-    - **Algorithm**: Uses Cartesian product to generate sentences by substituting words with synonyms.
-
-### Time Complexity
-
-- **Add/Remove Synonym Pair**: O(1) for map operations.
-- **Blacklist Word**: O(N), where N is the number of synonyms to be removed.
-- **Get Sentences**: O(M^N), where M is the number of synonyms per word and N is the number of words in the sentence.
-
 ## Classes and Design
 
 1. **WordSynonymGraph**: Singleton managing synonyms and blacklisted words.
