@@ -20,6 +20,7 @@ public class Main {
             facade.addSynonymPair("hello", "hey", adminRole);
             facade.addSynonymPair("world", "earth", adminRole);
             facade.addSynonymPair("planet", "earth", adminRole);
+            facade.addSynonymPair("planet", "planet", adminRole);
             System.out.println("Added synonym pairs successfully.");
         } catch (Exception e) {
             System.err.println("Error adding synonym pairs: " + e.getMessage());

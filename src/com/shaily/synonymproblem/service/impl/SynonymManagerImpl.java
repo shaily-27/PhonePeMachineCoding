@@ -19,7 +19,7 @@ public class SynonymManagerImpl implements SynonymManager {
         if (sentenceGenerationStrategy == null) {
             throw new IllegalArgumentException("SentenceGenerationStrategy cannot be null.");
         }
-        this.synonymGraph = WordSynonymGraph.getInstance(); // Use singleton instance
+        this.synonymGraph = WordSynonymGraph.getInstance();
         this.sentenceGenerationStrategy = sentenceGenerationStrategy;
     }
 

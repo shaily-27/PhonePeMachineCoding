@@ -3,6 +3,7 @@ package com.shaily.synonymproblem.strategy.impl;
 import com.shaily.synonymproblem.strategy.SentenceGenerationStrategy;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DefaultSentenceGenerationStrategy implements SentenceGenerationStrategy {
@@ -15,6 +16,7 @@ public class DefaultSentenceGenerationStrategy implements SentenceGenerationStra
 
         List<String> resultSentences = new ArrayList<>();
         buildSentences(synonymsList, resultSentences, 0, new StringBuilder());
+        Collections.sort(resultSentences); // Sort sentences lexicographically
         return resultSentences;
     }
 
